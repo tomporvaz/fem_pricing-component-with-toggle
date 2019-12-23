@@ -1,0 +1,132 @@
+:root{
+    --primary-gradient: linear-gradient(125deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    --very-light-grayish-blue: hsl(240, 78%, 98%);
+    --light-grayish-blue: hsl(234, 14%, 74%);
+    --graish-blue: hsl(233, 13%, 49%);
+    --dark-grayish-blue: hsl(232, 13%, 33%);
+} 
+
+body{
+    background-color: var(--very-light-grayish-blue);
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+}
+
+.card1{
+    background-color: white;
+    height: 300px;
+    width: 100px;
+}
+
+.card2{
+    background: var(--primary-gradient);
+    height: 300px;
+    width: 100px;
+}
+
+
+/* headline element for Our Pricing*/
+h1{
+    position: relative;
+    margin: 2em, auto, .5em, auto;
+    text-align: center;
+    color: var(--graish-blue);
+    font-size: 24px;
+    margin-block-start:2em; 
+    margin-block-end:.5em; 
+    margin-inline-start:auto; 
+    margin-inline-end:auto;
+}
+
+/* toggle style */
+.toggle-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    align-items: center;
+    justify-items: center;
+    color: var(--light-grayish-blue);
+    margin-top: 0.5em;
+    justify-content: center;
+}
+
+.toggle-grid h4{
+    font-size: 12px;
+}
+
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 26px;
+
+}
+
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    border-radius: 26px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--primary-gradient);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(18px);
+}
+
+
+
+/* background styles */
+.background-img-top{
+    top: -5%;
+    right: -50%;
+    z-index: -1;
+    position: absolute;
+}
+
+.background-img-bottom{
+    display: none;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    position: absolute;
+}
+
+/* media query for desktop devices */
+@media(min-width: 376px){
+    .background-img-top{
+        top: 0;
+        right: 0;
+    }
+    
+    .background-img-bottom{
+        display: block;
+    }
+    
+}
